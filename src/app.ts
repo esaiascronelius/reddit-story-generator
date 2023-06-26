@@ -1,8 +1,5 @@
-import generateComment from './generateComment.js'
 import generatePost from './generatePost.js'
+import generatePostDocument from './generatePostFile.js'
 
-const post = await generatePost()
-const comment = await generateComment(post.context)
-
-console.log(post)
-console.log(comment)
+const post = await generatePost('r/AmItheAsshole')
+await generatePostDocument(post, './tmp/post.html')
